@@ -13,6 +13,7 @@ function getLonely(root) {
   let loneyNodes = [];
   if (root === null) retrun;
   function traverse(node) {
+    if (!node) return;
     if (node.left !== null) {
       if (node.right === null) {
         lonelyNodes.push(node.left.val);
