@@ -16,11 +16,8 @@ var isSameTree = function (p, q) {
   if (!q || !p) return false;
   function traverse(node1, node2) {
     if (!node1 && !node2) return true;
-    if (node1.left == null && node2.left != null) return false;
-    if (node1.left !== null && node2.left == null) return false;
-    if (node1.right == null && node2.right != null) return false;
-    if (node1.right !== null && node2.right == null) return false;
 
+    if (!node1 || !node2) return false;
     if (node1.val !== node2.val) return false;
 
     let left = traverse(node1.left, node2.left);
